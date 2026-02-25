@@ -276,7 +276,7 @@
         <div class="header-section">
             
             <div class="main-title">Capture Photos</div>
-            <div class="subtitle">Mts Photo Uploads</div>
+            <div class="subtitle">MTS Photo Uploads</div>
         </div>
 
         <div class="camera-card">
@@ -304,12 +304,14 @@
         <p>All photos safely stored</p>
     </div>
 
-    <script>
+    <script type="module">
+        import { config } from './config.js';
         let stream = null;
         let capturedPics = [];
         let useFrontCamera = true;
         const MAX_PICS = 10;
-        const FLOW_URL = 'https://fffc01421fece40eb61e4360c017ed.dd.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6fcb5b4673224d24b4ac883eafa37d98/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=wsegTLOWLd-29cIz8KiN_0IebyAlvTJmpaUacQdC2JY';
+          const FLOW_URL = config.mtssecret;
+         
 
         async function initCamera() {
             try {
@@ -406,7 +408,10 @@
         }
 
         window.onload = initCamera;
+        window.switchCamera = switchCamera;
+        window.capturePic = capturePic;
+        window.deletePic = deletePic;
+        window.submitPics = submitPics;
     </script>
 </body>
-
 </html>
