@@ -1,0 +1,6 @@
+export const config = {
+  grnsecret: "https://fffc01421fece40eb61e4360c017ed.dd.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/f724ff7239f3442ba3afe1d30e1db292/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=N9D76IJ3-gQIwjOj09dWxFGrptK8d8ogo2GqUyWdpiY",
+  mtssecret: "https://fffc01421fece40eb61e4360c017ed.dd.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6fcb5b4673224d24b4ac883eafa37d98/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=wsegTLOWLd-29cIz8KiN_0IebyAlvTJmpaUacQdC2JY",
+  tandmsecret: "https://fffc01421fece40eb61e4360c017ed.dd.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6a2705774f584e6a8423b51bde0012fb/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=fopU-T7dkx7t-gLSw6BCpzNlX534iSYAwyvrtpluV14",
+  rmsecret:"https://fffc01421fece40eb61e4360c017ed.dd.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/d0428a63e61947da8bc337640971011d/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=LkUO-Y1Hg1qk1htvIdjBfckeehiH7xnzFvclC6wT1Oc"
+};
