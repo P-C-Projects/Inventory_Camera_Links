@@ -276,7 +276,7 @@
         <div class="header-section">
             
             <div class="main-title">Capture Photos</div>
-            <div class="subtitle">Grn Photo Uploads</div>
+            <div class="subtitle">GRN Photos Uploads</div>
         </div>
 
         <div class="camera-card">
@@ -304,12 +304,15 @@
         <p>All photos safely stored</p>
     </div>
 
-    <script>
+    <script type="module">
+        import { config } from './config.js';
         let stream = null;
         let capturedPics = [];
         let useFrontCamera = true;
         const MAX_PICS = 10;
-          const FLOW_URL = 'https://fffc01421fece40eb61e4360c017ed.dd.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/f724ff7239f3442ba3afe1d30e1db292/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=N9D76IJ3-gQIwjOj09dWxFGrptK8d8ogo2GqUyWdpiY';
+        const FLOW_URL = config.grnsecret;
+         
+
         async function initCamera() {
             try {
                 if (stream) stream.getTracks().forEach(track => track.stop());
@@ -405,7 +408,10 @@
         }
 
         window.onload = initCamera;
+        window.switchCamera = switchCamera;
+        window.capturePic = capturePic;
+        window.deletePic = deletePic;
+        window.submitPics = submitPics;
     </script>
 </body>
-
 </html>
