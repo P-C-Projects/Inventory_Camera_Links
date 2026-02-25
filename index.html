@@ -16,6 +16,8 @@
             --border: rgba(255,255,255,0.07);
             --text: #e8eaf0;
             --muted: #7a7f94;
+            --tm: #f4c430;   /* yellow */
+            --rm: #ff1744;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -70,7 +72,7 @@
             border: 1px solid var(--border);
             border-radius: 100px;
             padding: 6px 16px;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 500;
             letter-spacing: 0.12em;
             text-transform: uppercase;
@@ -150,12 +152,14 @@
             position: absolute;
             top: 0; left: 20%; right: 20%;
             height: 1px;
-            border-radius: 5px;
-            transition: opacity 0.6s;
+            border-radius: 1px;
+            transition: opacity 0.3s;
         }
 
-        .card.grn::before { background: var(--grn); }
-        .card.mts::before { background: var(--mts); }
+.card.grn::before { background: var(--grn); }
+.card.mts::before { background: var(--mts); }
+.card.tm::before { background: var(--tm); }
+.card.rm::before { background: var(--rm); }
 
         /* Background blob */
         .card::after {
@@ -168,8 +172,10 @@
             transition: opacity 0.3s, transform 0.3s;
         }
 
-        .card.grn::after { background: var(--grn); }
-        .card.mts::after { background: var(--mts); }
+.card.grn::after { background: var(--grn); }
+.card.mts::after { background: var(--mts); }
+.card.tm::after { background: var(--tm); }
+.card.rm::after { background: var(--rm); }
 
         .card:hover {
             transform: translateY(-3px);
@@ -177,8 +183,10 @@
 
         .card:hover::after { opacity: 0.12; transform: scale(1.2); }
 
-        .card.grn:hover { box-shadow: 0 12px 40px rgba(0,200,83,0.15); }
-        .card.mts:hover { box-shadow: 0 12px 40px rgba(255,109,0,0.15); }
+        .card.grn:hover { box-shadow: 0 12px 40px rgba(7, 207, 90, 0.815); }
+        .card.mts:hover { box-shadow: 0 12px 40px rgba(230, 107, 14, 0.87); }
+        .card.tm:hover { box-shadow: 0 12px 40px rgba(216, 202, 13, 0.822); }
+        .card.rm:hover { box-shadow: 0 12px 40px rgba(228, 5, 16, 0.801); }
 
         .card-left {
             display: flex;
@@ -198,8 +206,26 @@
             flex-shrink: 0;
         }
 
-        .card.grn .icon-box { background: rgba(0,200,83,0.12); border: 1px solid rgba(0,200,83,0.25); }
-        .card.mts .icon-box { background: rgba(255,109,0,0.12); border: 1px solid rgba(255,109,0,0.25); }
+      /* ICON BOX */
+.card.grn .icon-box {
+    background: rgba(0,200,83,0.15);
+    border: 1px solid var(--grn);
+}
+
+.card.mts .icon-box {
+    background: rgba(255,109,0,0.15);
+    border: 1px solid var(--mts);
+}
+
+.card.tm .icon-box {
+    background: rgba(244,196,48,0.15);
+    border: 1px solid var(--tm);
+}
+
+.card.rm .icon-box {
+    background: rgba(255,23,68,0.15);
+    border: 1px solid var(--rm);
+}
 
         .card-info h2 {
             font-family: 'Rajdhani', sans-serif;
@@ -209,8 +235,12 @@
             text-transform: uppercase;
         }
 
-        .card.grn .card-info h2 { color: var(--grn); }
-        .card.mts .card-info h2 { color: var(--mts); }
+
+
+.card.grn .card-info h2 { color: var(--grn); }
+.card.mts .card-info h2 { color: var(--mts); }
+.card.tm .card-info h2 { color: var(--tm); }
+.card.rm .card-info h2 { color: var(--rm); }
 
         .card-info p {
             font-size: 12px;
@@ -230,8 +260,10 @@
             transform: translateX(4px);
         }
 
-        .card.grn:hover .arrow { color: var(--grn); }
-        .card.mts:hover .arrow { color: var(--mts); }
+.card.grn:hover .arrow { color: var(--grn); }
+.card.mts:hover .arrow { color: var(--mts); }
+.card.tm:hover .arrow { color: var(--tm); }
+.card.rm:hover .arrow { color: var(--rm); }
 
         /* Footer */
         .footer {
@@ -266,14 +298,15 @@
                         <h2>GRN Photos</h2>
                          <p>Click this button to open the page</p>
                         
-                    </div>
+                    </div> 
                 </div>
                 <span class="arrow">→</span>
             </a>
 
-            <a href="mts_camera_link.html" class="card mts">
+
+           <a href="mts_camera_link.html" class="card mts">
                 <div class="card-left">
-                    <div class="icon-box">🚚</div>
+                    <div class="icon-box">🚛</div>
                     <div class="card-info">
                         <h2>MTS Photos</h2>
                         <p>Click this button to open the page</p>
@@ -282,9 +315,36 @@
                 </div>
                 <span class="arrow">→</span>
             </a>
+
+
+            <a href="t&m_camera_link.html" class="card tm">
+                <div class="card-left">
+                    <div class="icon-box">🚗</div>
+                    <div class="card-info">
+                        <h2>T&M Photos</h2>
+                        <p>Click this button to open the page</p>
+                      
+                    </div>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+             
+            <a href="rm_camera_link.html" class="card rm">
+                <div class="card-left">
+                    <div class="icon-box">📝</div>
+                    <div class="card-info">
+                        <h2>RM Photos</h2>
+                        <p>Click this button to open the page</p>
+                      
+                    </div>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+
+            
         </div>
 
-        <footer class="footer" style="font-size: 15px;">
+        <footer class="footer">
             Tap a section to open the camera &amp; upload to SharePoint
         </footer>
 
