@@ -1,0 +1,17 @@
+services:
+  # 1. Your Website
+  web:
+    build: .
+    container_name: Camera links all
+    restart: unless-stopped
+    ports:
+      - "9083:80"
+
+  # 2. Your Cloudflare Tunnel
+  tunnel:
+    image: cloudflare/cloudflared
+    container_name: cloudflared-inventory
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
