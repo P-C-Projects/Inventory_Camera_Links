@@ -1,13 +1,37 @@
 services:
-  # 1. Your Website
-  web:
+  # 1. GRN Page
+  grn:
     build: .
-    container_name: Camera links all
+    container_name: camera_grn
     restart: unless-stopped
-    ports:
-      - "9083:80"
+    volumes:
+      - ./grn_camera_link.html:/usr/share/nginx/html/index.html
 
-  # 2. Your Cloudflare Tunnel
+  # 2. MTS Page
+  mts:
+    build: .
+    container_name: camera_mts
+    restart: unless-stopped
+    volumes:
+      - ./mts_camera_link.html:/usr/share/nginx/html/index.html
+
+  # 3. RM Page
+  rm:
+    build: .
+    container_name: camera_rm
+    restart: unless-stopped
+    volumes:
+      - ./rm_camera_link.html:/usr/share/nginx/html/index.html
+
+  # 4. TM Page (Renamed from t&m for safety)
+  tm:
+    build: .
+    container_name: camera_tm
+    restart: unless-stopped
+    volumes:
+      - ./t&m_camera_link.html:/usr/share/nginx/html/index.html
+
+  # 5. Your Cloudflare Tunnel
   tunnel:
     image: cloudflare/cloudflared
     container_name: cloudflared-inventory
@@ -15,3 +39,10 @@ services:
     command: tunnel run
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+  # index website
+  web:
+    build: .
+    container_name: inv_index
+    restart: unless-stopped
+    ports:
+      - "9081:80"     
